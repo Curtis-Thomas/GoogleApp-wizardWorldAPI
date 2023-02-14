@@ -1,31 +1,225 @@
 
 @media only screen and (max-width: 600px) {
+    html {
+        height: 100vh;
+        background: linear-gradient(rgba(6, 2, 59, 0.205), rgba(0, 0, 0, 0.61)),
+        url(background.webp);
+        font-family: 'Playfair Display', serif;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right;
+        color: white; 
+    }
+
 
     h1 {
         text-align: center;
+        font-style: italic;
+        font-weight: 400;
+        text-shadow: 0px 0px 10px rgb(0, 0, 0), 1px 1px 2px black;
         height: 5vh;
+        color: white;
+        font-size: 2rem;
+        animation: fadeIn 3s; 
+        backdrop-filter: blur(0.5px);
     }
+
+    .main {
+        backdrop-filter: blur(0.5px);
+    }
+
+   
+
 
     .btnMain {
         width: 100%;
         height: 15vh;
         margin-top: 1vh;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        color: white;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        animation: fadeIn 3s; 
+        backdrop-filter: blur(0.5px);
+    
     }
 
-    .btnElixirs {
-        display: block;
+    .btnMain:active {
+        text-shadow: 0px 0px 10px rgb(255, 255, 255), 1px 1px 2px rgb(255, 255, 255);
     }
+
+
+
+    @keyframes fadein{
+    from {
+        opacity: 0;
+        line-height: 70px;
+    }
+    to{
+        opacity: 1;
+        line-height: 20px;
+        background-color: rgba(21, 18, 66, 0.37)
+    }
+    }
+
+    @keyframes fadein2{
+        from {
+            opacity: 0;
+            line-height: 50px;
+        }
+        to{
+            opacity: 1;
+            line-height: 25px;
+        }
+        }
+
+    .btnElixirs,
+    .btnSpells {
+        display: block;
+        width: 28%;
+        height: 10vh;
+        margin: 1vh;
+        background-color: rgba(0, 0, 0, 0);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-family: 'Playfair Display', serif;
+
+    }
+
+    .btnElixirs:active,
+    .btnSpells:active {
+        text-shadow: 0px 0px 10px rgb(255, 255, 255), 1px 1px 2px rgb(255, 255, 255);
+    }
+    button:active{
+        text-shadow: 0px 0px 10px rgb(255, 255, 255), 1px 1px 2px rgb(255, 255, 255);
+    }
+
+    .elixirMainDiv,
+    .spellsMainDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;  
+    }
+
+    .elixirInfoDiv,
+    .spellsInfoDiv{
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 15%;
+    }
+
+    .elixirInfo,
+    .spellsInfo,
+    .housesInfo {
+        animation: 1s ease 0s normal forwards 1 fadein2;
+    }
+
+    .housesMainDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;  
+       
+        
+      
+    }
+
 
     .btnHouses {
         display: block;
+       width: 40%;
+       height: 15vh;
+       margin-top: 5vh;
+       color: white;
+       background-color: rgba(0, 0, 0, 0);
+       border: none;
+       font-family: 'Playfair Display', serif;
+       font-size: 1.3rem;
+       border-radius: 5px;
+       border: solid 20px rgba(0, 0, 0, 0);
+      
+      
+      
+       
     }
 
-    .btnIngredients {
-        display: block;
+
+
+    
+
+    #housesArr0 {
+        background-image:url(animal-1295577_1280.webp) ;
+
+       
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    
+       
     }
+
+
+    #housesArr1{
+        background-image:url(badger-37755_1280.webp) ;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+       
+
+    }
+
+    #housesArr2{
+        background-image:url(hawk-310517_1280.webp) ;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    #housesArr3{
+        background-image:url(silhouette-3272088_1280.webp) ;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+  
 
     .btnSpells{
         display: block;
+        animation: fadeIn 3s;   
+    }
+
+
+
+    .mainNav{
+        animation: fadeIn 3s; 
+        height: 15vh;
+        
+
+    }
+
+    #navDiv{
+        display: flex;
+        flex-wrap: wrap;
+        height: 10vh;
+        align-items: center;
+    }
+
+    #navHome,#navElixir, #navSpells, #navHouses {
+        background-color: rgba(0, 0, 0, 0);
+      
+        border: none;
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: white;
+
+    }
+    #navHome:active,#navElixir:active, #navSpells:active, #navHouses:active{
+    text-shadow: 0px 0px 10px rgb(255, 255, 255), 1px 1px 2px rgb(255, 255, 255);
     }
 
     
@@ -39,3 +233,7 @@
 
 
 }
+
+
+/* 
+font-family: 'Playfair Display', serif; */

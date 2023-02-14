@@ -5,6 +5,11 @@
 function renderAPIElixirs(data){
     clearUI()
 
+    const navElixirSeperator = document.createElement('p')
+    navElixirSeperator.textContent = '/'
+    navElixirSeperator.setAttribute('id', 'navElixirSeperator')
+    navDiv.append(navElixirSeperator)
+
     const navElixir = document.createElement('button')
     navElixir.textContent = 'Elixir'
     navElixir.setAttribute('id', 'navElixir')
@@ -26,51 +31,62 @@ function renderAPIElixirs(data){
         return 0;
     })
 
+
+    const elixirMainDiv = document.createElement('div')
+    elixirMainDiv.setAttribute('class', 'elixirMainDiv')
+    resultsContainer.append(elixirMainDiv)
+
     for(let i = 0; i < elixirsArr.length; i++ ){
 
         let printElixirs = document.createElement('button')
-        printElixirs.setAttribute('class', 'btnElixirs')   
+        printElixirs.setAttribute('class', 'btnElixirs')  
+       
+        
         printElixirs.textContent = elixirsArr[i]['name']
         printElixirs.setAttribute('id',`elixirsArr${i}`)
-        resultsContainer.append(printElixirs) 
+        elixirMainDiv.append(printElixirs) 
+
+        document.querySelector(`#elixirsArr${i}`).style.animation = `1s ease 0s normal forwards 1 fadein`;
+ 
     }
 
 
     for(let i = 0; i < elixirsArr.length; i++ ){
         document.querySelector(`#elixirsArr${i}`).addEventListener('click', function(){
-        clearUI()
+        
 
-        const printName = document.createElement('h3')
-        printName.textContent = 'Name: ' +   `${elixirsArr[i].name}`
-        resultsContainer.append(printName)
 
-        const printCharacteristics = document.createElement('p')
-        printCharacteristics.textContent = 'Characteristics: ' +   `${elixirsArr[i].characteristics}`
-        resultsContainer.append(printCharacteristics)
+        setTimeout(function(){
+            clearUI()
+            const elixirInfoDiv = document.createElement('div')
+            elixirInfoDiv.setAttribute('class', 'elixirInfoDiv')
+            resultsContainer.append(elixirInfoDiv)
 
-        const printDifficulty = document.createElement('p')
-        printDifficulty.textContent = 'Difficulty: ' +   `${elixirsArr[i].difficulty}`
-        resultsContainer.append(printDifficulty)
 
-        const printEffect = document.createElement('p')
-        printEffect.textContent = 'Effect: ' +   `${elixirsArr[i].effect}`
-        resultsContainer.append(printEffect)
+            const printName = document.createElement('h3')
+            printName.textContent = 'Name: ' +   `${elixirsArr[i].name}`
+            printName.setAttribute('class', 'elixirInfo')
+            elixirInfoDiv.append(printName)
 
-        // const printIngredients
-        // const printInventors
+            const printCharacteristics = document.createElement('p')
+            printCharacteristics.textContent = 'Characteristics: ' +   `${elixirsArr[i].characteristics}`
+            printCharacteristics.setAttribute('class', 'elixirInfo')
+            elixirInfoDiv.append(printCharacteristics)
 
-        // const printManufacturer = document.createElement('p')
-        // printManufacturer.textContent = 'Manufacturer: ' +   `${elixirsArr[i].manufacturer}`
-        // resultsContainer.append(printManufacturer)
+            const printDifficulty = document.createElement('p')
+            printDifficulty.textContent = 'Difficulty: ' +   `${elixirsArr[i].difficulty}`
+            printDifficulty.setAttribute('class', 'elixirInfo')
+            elixirInfoDiv.append(printDifficulty)
 
-        // const printSideEffects = document.createElement('p')
-        // printSideEffects.textContent = 'Effetcs: ' +   `${elixirsArr[i].sideEffects}`
-        // resultsContainer.append(printSideEffects)
+            const printEffect = document.createElement('p')
+            printEffect.textContent = 'Effect: ' +   `${elixirsArr[i].effect}`
+            printEffect.setAttribute('class', 'elixirInfo')
+            elixirInfoDiv.append(printEffect)
 
-        // const printTime = document.createElement('p')
-        // printTime.textContent = 'Time: ' +   `${elixirsArr[i].time}`
-        // resultsContainer.append(printTime)
 
+        },100)
+
+        
         })
     }
     

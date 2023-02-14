@@ -54,24 +54,7 @@ const printHome = function(){
     
     })
 
-    const btnIngredients = document.createElement('button')
-    btnIngredients.setAttribute('id', 'btnIngredients')
-    btnIngredients.setAttribute('class', 'btnMain')
-    btnIngredients.textContent = 'Ingredients'
-    mainDiv.append(btnIngredients)
 
-    document.querySelector('#btnIngredients').addEventListener('click', function(){
-        url = 'https://wizard-world-api.herokuapp.com/Ingredients'
-        function fetchAPIIngredients(){
-     
-            fetch(url)
-                .then((response) => response.json())
-                // .then((data)=> console.log(data)) 
-                .then((data)=> renderAPIIngredients(data) )       
-        }
-        fetchAPIIngredients()
-    
-    })
 
     const btnSpells = document.createElement('button')
     btnSpells.setAttribute('id', 'btnSpells')
@@ -96,6 +79,12 @@ const printHome = function(){
 
 
 }
+
+document.querySelector('#h1').addEventListener('click',function(){
+    clearNav()
+    printHome()
+    printNav()
+})
 
 printHome()
 
